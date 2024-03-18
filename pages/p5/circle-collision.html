@@ -4,8 +4,36 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>circle colliasion</title>
+    <link rel="stylesheet" href="../../styles/util.css" />
+    <style>
+      canvas {
+        box-shadow: 0 0 3px #30303360;
+      }
+    </style>
   </head>
   <body>
-    <div>circle collision</div>
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.1/lib/p5.js"></script>
+    <script>
+      const s = 600
+      function setup() {
+        createCanvas(s, s)
+      }
+
+      const d = s - 40
+      const d2 = 10
+      function draw() {
+        background('#fff')
+        noStroke()
+
+        push()
+        translate(s / 2, s / 2)
+        fill('#ede3e7')
+        circle(0, 0, d)
+        pop()
+
+        fill('#d2568c')
+        circle(mouseX, mouseY, d2)
+      }
+    </script>
   </body>
 </html>
